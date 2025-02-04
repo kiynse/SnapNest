@@ -1,0 +1,128 @@
+/* Login Page Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fundo da página */
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #450057;
+  }
+  
+  .login-box {
+    background-color: #fff;
+    padding: 40px 5px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .login-text {
+    font-size: 28px;
+    color: #000000;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  .input-container {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .input-container label {
+    font-size: 12px;
+    color: #000000;
+    margin-bottom: 5px;
+    display: block;
+    margin-left: 60px;
+  }
+  
+  .input-container input {
+    width: 70%; /* Diminuindo a largura para 80% */
+    padding: 10px;
+    font-size: 16px;
+    border: 3px solid #d048e242;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 0 auto; /* Centraliza o input dentro da container */
+    display: block; /* Faz com que o input ocupe a largura definida */
+    transition: border-color 0.3s ease; /* Transição suave para mudança da cor da borda */
+  }
+  
+  .input-container input:focus {
+    border-color: #6f007e;
+    outline: none;
+  }
+  
+  .input-container input:hover {
+    border-color: #9b00b1; /* Cor de borda mais escura para o hover */
+  }
+  
+  .forgot-password {
+    font-size: 12px;
+    color: #48005a;
+    text-decoration: none;
+    display: block;
+    text-align: start;
+    margin-bottom: 12px;
+    margin-left: 60px;
+    font-weight: bold;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  .login-btn {
+    width: 60%; /* Largura ajustada para 80% */
+    padding: 12px;
+    font-size: 16px;
+    background-color: #7a0099;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px auto 0; /* Centraliza o botão abaixo dos inputs */
+    display: block; /* Faz com que o botão ocupe a largura definida */
+  }
+  
+  .login-btn:hover {
+    background-color: #500064;
+  }
+  
+  .login-btn:focus {
+    outline: none;
+  }
+
+  .signup-text {
+    font-size: 14px;
+    color: #48005a;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .signup-text a {
+    color: #7a0099;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .signup-text a:hover {
+    text-decoration: underline;
+  }
+  
+  
