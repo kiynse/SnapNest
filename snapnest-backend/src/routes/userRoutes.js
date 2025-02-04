@@ -12,7 +12,7 @@ router.get("/", checkToken, UserController.getAllUsers);
 router.get("/:id", checkToken, UserController.getUserById);
 
 // Rota para criar um novo usuário
-router.post("/", checkToken, UserController.createUser);
+router.post("/", UserController.createUser);
 
 // Atualizar dados do usuário
 router.put("/update", checkToken, UserController.updateUser);

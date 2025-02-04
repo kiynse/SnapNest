@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2"; // Importando o SweetAlert
+import { Link } from "react-router-dom"; // Importe o Link do react-router-dom
 import "../style/Login.css"
 
 const Login = () => {
@@ -63,16 +64,16 @@ const Login = () => {
                             placeholder="Digite sua senha"
                         />
                     </div>
-                    <a href="/forgot-password" className="forgot-password">
+                    {/* Alterei para Link */}
+                    <Link to="/forgot-password" className="forgot-password">
                         Esqueceu a senha?
-                    </a>
+                    </Link>
                     <button type="submit" className="login-btn">Entrar</button>
                     <div className="signup-text">
                         <p>
-                            Não possui conta? <a href="/register">Cadastre-se</a>
+                            Não possui conta? <Link to="/register">Cadastre-se</Link>
                         </p>
                     </div>
-
                 </form>
             </div>
         </div>
