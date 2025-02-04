@@ -1,0 +1,28 @@
+.feed-container {
+    display: flex; /* Utiliza o Flexbox para colocar Sidebar e Feed lado a lado */
+  }
+  
+  
+  .feed-content {
+    margin-left: 100px; /* Dá um espaço ao conteúdo para não sobrepor a Sidebar */
+    padding: 20px; /* Espaçamento interno para o conteúdo */
+    width: calc(100% - 250px); /* O conteúdo vai ocupar o restante da tela */
+  }
+  
+  .h2-feed {
+    font-size: 2rem;
+    color: #450057;
+  }
+  
+  .img-feed {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .p-feed {
+    font-size: 1rem;
+    color: #333;
+  }
+  
