@@ -30,57 +30,56 @@ const PostCardDetail = ({ post }) => {
   };
 
   return (
-    <div className="post-card-detail">
-      <div className="post-image-container">
-        <img
-          src={`http://localhost:3000${post.imageUrl}`}
-          alt={post.title}
-          className="post-image"
-        />
-      </div>
-
-      <div className="post-info">
-        <h3>{post.title}</h3>
-        <p>{post.description}</p>
-
-        {/* Botões de interações */}
-        <div className="post-actions">
-          <button className="action-btn"><FaHeart /> Like</button>
-          <button className="action-btn"><FaShareAlt /> Compartilhar</button>
-          <button className="action-btn"><FaSave /> Salvar</button>
+    <div className="post-card-detail-container">
+      <div className="post-card-detail">
+        <div className="post-image-container">
+          <img
+            src={`http://localhost:3000${post.imageUrl}`}
+            alt={post.title}
+            className="post-image"
+          />
         </div>
 
-        <div className="categories">
-          {post.categories.map((category) => (
-            <span key={category.id} className="category-tag">
-              {category.name}
-            </span>
-          ))}
-        </div>
+        <div className="post-info">
+          <h3 style={{display: "flex", marginBottom: "3px"}}>
+            {post.title}
+            <div className="post-actions">
+              <button className="action-btn"><FaHeart /> Like</button>
+              <button className="action-btn"><FaShareAlt /> Compartilhar</button>
+              <button className="action-btn"><FaSave /> Salvar</button>
+            </div>
+          </h3>
+         
+          <p style={{marginTop: "20px"}}>{post.description}</p>
+          
 
-        {/* Comentários */}
-        <div className="comments-section">
-          <h4>Comentários</h4>
-          <div className="comments-list">
-            {comments.map((comment, index) => (
-              <div key={index} className="comment-item">
-                <p>{comment.content}</p>
-              </div>
-            ))}
+
+          <div className="comments-section">
+            <h4>Comentários</h4>
+            <div className="comments-list">
+              {comments.map((comment, index) => (
+                <div key={index} className="comment-item">
+                  <p>{comment.content}</p>
+                </div>
+              ))}
+            </div>
+
+            <form onSubmit={handleCommentSubmit}>
+              <input
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                placeholder="Escreva um comentário..."
+                className="comment-input"
+                
+              />
+              <button type="submit" className="comment-submit-btn">Comentar</button>
+            </form>
           </div>
-
-          <form onSubmit={handleCommentSubmit}>
-            <textarea
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-              placeholder="Escreva um comentário..."
-              className="comment-input"
-            />
-            <button type="submit" className="comment-submit-btn">Comentar</button>
-          </form>
         </div>
       </div>
     </div>
+    
+
   );
 };
 

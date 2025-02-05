@@ -31,9 +31,9 @@ const PostDetail = () => {
   }
 
   return (
-    <div className="post-detail-container">
+    <div className="feed-container">
       <Sidebar /> {/* Adicionando a Sidebar */}
-      <div className="post-detail-content">
+      <div className="feed-contentt">
         <SearchBar /> {/* Adicionando a SearchBar */}
 
         {/* Usando o PostCardDetail aqui */}
