@@ -1,122 +1,124 @@
 /* Estilos para a Sidebar */
 .sidebar-container {
-    width: 80px;
-    background-color: #450057;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-right: 2px solid #000000;
-  }
-  
-  .sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    height: 100%; /* Para garantir que a sidebar ocupe toda a altura da tela */
-    justify-content: space-between; /* Coloca os itens na parte superior e o ícone de configurações na parte inferior */
-  }
-  
-  .sidebar-logo {
-    margin-bottom: 20px;
-  }
-  
-  .sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Garante que os itens fiquem centralizados */
-  }
-  
-  .sidebar-item {
-    width: auto; /* Remove a largura de 100% */
-    text-align: center;
-    padding: 10px;
-    margin: 10px 0; /* Adiciona espaçamento entre os itens */
-    transition: background-color 0.3s ease;
-  }
-  
-  .sidebar-item a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-radius: 20%; /* Tornando o hover arredondado */
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Hover para os itens da sidebar */
-  .sidebar-item:hover a {
-    background-color: #6f007e;
-  }
-  
-  /* Quando o item for selecionado */
-  .sidebar-item.selected a {
-    background-color: #8a0092; /* Cor mais forte para indicar seleção */
-  }
-  
-  /* Estilo para o ícone de configurações */
-  .sidebar-settings {
-    margin-top: auto; /* Garante que o ícone de configurações fique na parte inferior */
-    padding: 10px 0;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .sidebar-settings a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-radius: 20%; /* Tornando o hover arredondado */
-    transition: background-color 0.3s ease;
-  }
-  
-  .sidebar-settings a:hover {
-    background-color: #6f007e; /* Mesmo efeito de hover para a engrenagem */
-  }
-  
-  /* Mudança de cor quando o ícone de configurações for clicado (selecionado) */
-  .sidebar-settings.selected a {
-    background-color: #8a0092; /* Cor mais forte para indicar seleção */
-  }
-  
-  .settings-popup {
-    position: absolute;
-    top: 835px; /* Ajuste conforme necessário */
-    left: 95px; /* Ajuste conforme necessário */
-    background-color: #450057;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px;
-    width: 150px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Garante que o padding não afete o tamanho final do popup */
-    z-index: 100;
-  }
-  
-  /* Estilo para os links dentro do popup */
-  .settings-popup div {
-    padding: 0px 0;
-    z-index: 100;
-  }
-  
-  .settings-popup a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 10px 5px; /* Padding fixo para não aumentar o tamanho no hover */
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    z-index: 100;
-  }
-  
-  /* Hover no link */
-  .settings-popup a:hover {
-    background-color: #6f007e;
-    z-index: 100;
-  }
+  width: 80px;
+  background-color: #450057;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-right: 2px solid #000000;
+  z-index: 10; /* Aumentei o z-index da sidebar para garantir que fique abaixo do popup */
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  height: 100%; /* Para garantir que a sidebar ocupe toda a altura da tela */
+  justify-content: space-between; /* Coloca os itens na parte superior e o ícone de configurações na parte inferior */
+}
+
+.sidebar-logo {
+  margin-bottom: 20px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Garante que os itens fiquem centralizados */
+}
+
+.sidebar-item {
+  width: auto; /* Remove a largura de 100% */
+  text-align: center;
+  padding: 10px;
+  margin: 10px 0; /* Adiciona espaçamento entre os itens */
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-item a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 20%; /* Tornando o hover arredondado */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover para os itens da sidebar */
+.sidebar-item:hover a {
+  background-color: #6f007e;
+}
+
+/* Quando o item for selecionado */
+.sidebar-item.selected a {
+  background-color: #8a0092; /* Cor mais forte para indicar seleção */
+}
+
+/* Estilo para o ícone de configurações */
+.sidebar-settings {
+  margin-top: auto; /* Garante que o ícone de configurações fique na parte inferior */
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-settings a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 20%; /* Tornando o hover arredondado */
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-settings a:hover {
+  background-color: #6f007e; /* Mesmo efeito de hover para a engrenagem */
+}
+
+/* Mudança de cor quando o ícone de configurações for clicado (selecionado) */
+.sidebar-settings.selected a {
+  background-color: #8a0092; /* Cor mais forte para indicar seleção */
+}
+
+/* Pop-up de configurações */
+.settings-popup {
+  position: absolute;
+  top: 835px; /* Ajuste conforme necessário */
+  left: 95px; /* Ajuste conforme necessário */
+  background-color: #450057;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Garante que o padding não afete o tamanho final do popup */
+  z-index: 9999; /* Z-index alto para garantir que o pop-up fique acima de todos os outros elementos */
+}
+
+/* Estilo para os links dentro do popup */
+.settings-popup div {
+  padding: 0px 0;
+  z-index: 10000; /* Certifique-se de que o div também tenha um z-index maior se necessário */
+}
+
+.settings-popup a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px 5px; /* Padding fixo para não aumentar o tamanho no hover */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  z-index: 10000;
+}
+
+/* Hover no link */
+.settings-popup a:hover {
+  background-color: #6f007e;
+  z-index: 10000;
+}
