@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Sidebar from "../components/Sidebar";
-import SearchBar from "../components/SearchBar"
+import SearchBar from "../components/SearchBar";
+import PostCard from "../components/PostCard"; // Importando o componente PostCard
 import "../style/Feed.css"; // Adiciona o arquivo CSS para o Feed
 
 const Feed = () => {
@@ -26,7 +27,14 @@ const Feed = () => {
   return (
     <div className="feed-container">
       <Sidebar />
-      <SearchBar />
+      <div className="feed-contentt">
+        <SearchBar />
+        <div className="feed-posts">
+          {posts.map((post) => (
+            <PostCard key={post.id} post={post} /> // Passando o post como prop para o Card
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

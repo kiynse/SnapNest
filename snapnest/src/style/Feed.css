@@ -1,28 +1,30 @@
 .feed-container {
-    display: flex; /* Utiliza o Flexbox para colocar Sidebar e Feed lado a lado */
-  }
-  
-  
-  .feed-content {
-    margin-left: 100px; /* Dá um espaço ao conteúdo para não sobrepor a Sidebar */
-    padding: 20px; /* Espaçamento interno para o conteúdo */
-    width: calc(100% - 250px); /* O conteúdo vai ocupar o restante da tela */
-  }
-  
-  .h2-feed {
-    font-size: 2rem;
-    color: #450057;
-  }
-  
-  .img-feed {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .p-feed {
-    font-size: 1rem;
-    color: #333;
-  }
-  
+  display: flex; /* Utiliza o Flexbox para colocar Sidebar e Feed lado a lado */
+}
+
+.feed-contentt {
+  margin-left: 100px; /* Dá um espaço ao conteúdo para não sobrepor a Sidebar */
+  padding: 10px 0px; /* Espaçamento interno para o conteúdo */
+  width: calc(100% - 250px); /* O conteúdo vai ocupar o restante da tela */
+}
+
+.h2-feed {
+  font-size: 2rem;
+  color: #450057;
+}
+
+.feed-posts {
+  column-count: 7; /* Define o número de colunas */
+  column-gap: 10px; /* Espaçamento entre as colunas */
+  display: block;
+}
+
+.feed-posts .post-card { /* Aplique isso ao PostCard */
+  break-inside: avoid; /* Impede que os PostCards se quebrem entre as colunas */
+  margin-bottom: 20px;
+}
+
+
+.search-bar-container {
+  margin-bottom: 20px; /* Adiciona espaçamento entre a SearchBar e o conteúdo */
+}

@@ -1,7 +1,7 @@
 const { Post, Category } = require("../models");
 
 const PostController = {
-  // 1️⃣ Criar Post com Múltiplas Categorias
+  // 1️⃣ Criar Post com Múltiplas Categorias usando o nome
   async createPost(req, res) {
     try {
       // Verificar se a imagem foi enviada
@@ -9,7 +9,7 @@ const PostController = {
         return res.status(400).json({ message: "Imagem é obrigatória!" });
       }
 
-      const { title, description, categoryIds } = req.body;
+      const { title, description, categoryNames } = req.body;  // Mudança aqui para categoryNames
 
       // Verificar se o título e descrição foram passados
       if (!title || !description) {
@@ -17,7 +17,7 @@ const PostController = {
       }
 
       // Verificar se as categorias foram passadas
-      if (!categoryIds || categoryIds.length === 0) {
+      if (!categoryNames || categoryNames.length === 0) {
         return res.status(400).json({ message: "Pelo menos uma categoria é obrigatória!" });
       }
 
@@ -32,15 +32,19 @@ const PostController = {
         userId,
       });
 
-      // Associe as categorias ao post
+      // Buscar as categorias pelo nome
       const categories = await Category.findAll({
         where: {
-          id: categoryIds,
+          name: categoryNames, // Mudança aqui, buscando pelas names das categorias
         },
       });
 
-      // Estabelecer a associação muitos para muitos entre o post e as categorias
-      await newPost.setCategories(categories);
+      if (categories.length === 0) {
+        return res.status(404).json({ message: "Algumas categorias não foram encontradas!" });
+      }
+
+      // Adicionar as categorias ao post
+      await newPost.addCategories(categories);
 
       return res.status(201).json({ message: "Post criado com sucesso!", post: newPost });
     } catch (error) {
