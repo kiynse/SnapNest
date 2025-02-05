@@ -56,7 +56,7 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <div
+        <div style={{zIndex: 30}}
           className={`sidebar-settings ${settingsSelected ? "selected" : ""}`}
           onClick={toggleSettingsPopup}
           title="Configurações"
@@ -67,7 +67,7 @@ const Sidebar = () => {
         </div>
 
         {settingsOpen && (
-          <div className="settings-popup">
+          <div className="settings-popup" style={{zIndex: 30}}>
             <div>
               <Link to="/settings">Configurações</Link>
             </div>

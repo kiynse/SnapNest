@@ -17,6 +17,7 @@
   column-count: 7; /* Define o número de colunas */
   column-gap: 10px; /* Espaçamento entre as colunas */
   display: block;
+  margin-top: 4%;
 }
 
 .feed-posts .post-card { /* Aplique isso ao PostCard */
